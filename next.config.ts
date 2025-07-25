@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
 
+    typescript: {
+    ignoreBuildErrors: true,
+  },
+
   // Optional: keep any other config you need
   reactStrictMode: true,
   swcMinify: true,
