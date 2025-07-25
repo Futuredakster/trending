@@ -4,13 +4,15 @@ export const fetchRedditContent = async () => {
   try {
     const response = await fetch('https://www.reddit.com/r/all/top.json?limit=10', {
       headers: {
-        'User-Agent': 'MyNextJSApp/1.0' // <-- Add your app info here
+        'User-Agent': 'MyNextJSApp/1.0',
       },
-      next: { revalidate: 60 }, // Revalidate every 60 seconds
+      next: { revalidate: 60 },
     });
 
     if (!response.ok) {
-      throw new Error('Network response was not ok: ' + response.status);
+      const text = await response.text();  // get error response body
+      console.error(`Reddit fetch failed: ${response.status} - ${text}`);
+      throw new Error(`Network response was not ok: ${response.status}`);
     }
 
     const data = await response.json();
