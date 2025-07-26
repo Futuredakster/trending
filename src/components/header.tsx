@@ -12,7 +12,9 @@ const header = () => {
         if(show){
             setShow(false);
         }
+       else{ 
         setShow(true)
+       }
     }
   return (
     <header>
@@ -27,7 +29,7 @@ const header = () => {
   <h1 className="label font-bold block lg:hidden">Trend Tracker</h1>
 </>
 
-        <button onClick={()=> showMenu(show)}className='hamburger block sm:hidden'>☰</button>
+        <button onClick={()=> showMenu(show)}className='hamburger block lg:hidden'>☰</button>
         {show && <Menu show={show} setShow={setShow} />}
         <h1 className="name hidden lg:block">{session?.user?.name}</h1>
          {session?.user?.image && (

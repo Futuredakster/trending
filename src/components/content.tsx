@@ -33,14 +33,15 @@ const Content = ({ type }: { type?: string }) => {
     <div className="content">
       {(type === "hackernews" || !type) && (
         <ul className="content-list">
-          <li className="content-item titles">
+          <li className="content-item titles block lg:!hidden">
            <h1 className=" text-white">Platform:</h1>  <h1 className="site text-white">Hacker News</h1>
           </li>
           {filteredHackerNews.map((post: any, index: number) => (
             <li key={index} className="content-item">
+                 <h1 className="hidden lg:block">Hacker News:</h1>
               {post.title}
-              <a className="site" href={post.url} target="_blank">
-                <button className="site but">Click here to visit the article</button>
+              <a className="site pb-5" href={post.url} target="_blank">
+                <button className="site but ">Click here to visit the article</button>
               </a>
             </li>
           ))}
@@ -49,11 +50,12 @@ const Content = ({ type }: { type?: string }) => {
 
       {(type === "reddit" || !type) && (
         <ul className="content-list">
-          <li className="content-item titles">
+          <li className="content-item titles block lg:!hidden">
            <h1  className=" text-white">Platform:</h1> <h1 className="site text-white">Reddit</h1>
           </li>
           {filteredReddit.map((post: any, index: number) => (
             <li key={index} className="content-item">
+                 <h1 className="hidden lg:block">Reddit:</h1>
               {post.title}
               <a className="site" href={post.url} target="_blank">
                 <button className="site but">Click here to visit the article</button>

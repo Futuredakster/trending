@@ -219,14 +219,30 @@ button{
     display: flex;
   }
 
-  .content{
-    border: none;
-  }
+ 
 
   .name{
     display: flex;
     justify-content: end;
     padding-right: 10px;
     width: 100%;
+  }
+
+  .content{
+    border:none;
+  }
+.content-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  border: none;
+}
+  .content-item{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+     border: 2px solid black;
   }
 }
